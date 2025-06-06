@@ -1,0 +1,90 @@
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #ffdead;
+  color: #333;
+}
+
+h1 {
+  color: #34495e;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+.slider-container {
+  position: relative;
+  width: 600px; /* スライドの表示幅 */
+  height: 400px; /* スライドの表示高さ */
+  overflow: hidden; /* コンテナからはみ出るスライドを隠す */
+  border: 1px solid #ddd;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #f8f8ff;
+}
+
+.slider-wrapper {
+  display: flex; /* スライドを横に並べる */
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out; /* スライドのアニメーション */
+}
+
+.slide {
+  min-width: 100%; /* 各スライドがコンテナの幅全体を占めるように */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box; /* paddingやborderがwidthに含まれるように */
+  padding: 20px;
+}
+
+.slide img {
+  max-width: 90%;
+  max-height: 70%;
+  object-fit: contain;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slide p {
+  font-size: 1.1em;
+  color: #666;
+}
+
+.prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.5em;
+  z-index: 10; /* スライドより前面に表示 */
+  transition: background-color 0.3s ease;
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
